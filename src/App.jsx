@@ -1,12 +1,15 @@
-import { useState } from 'react'
+import useCount from './hook/useCount'
+import React  from 'react'
+import MainClass from './component/mainClass'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+
+  const { count, setCount } = useCount() // resuable custom hooks reusable
 
   return (
     <>
-      <p>This is the</p>
+      <MainClass count={count} setCount= {setCount} />
     </>
   )
 }
